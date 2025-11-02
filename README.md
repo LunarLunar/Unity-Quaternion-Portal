@@ -2,6 +2,8 @@
 
 [English Version](#english-version)
 
+[直接下載腳本](https://raw.githubusercontent.com/LunarLunar/Unity-Quaternion-Portal/main/PortalCam.cs) 
+
 這是一個專為 Unity 3D 設計的 C# 腳本，用於實現**虛擬傳送門 (Virtual Portal)** 的視覺效果。
 
 本系統的核心在於利用 **Quaternion (四元數)** 數學和 **Transform 座標轉換**，確保輔助攝影機（Portal Camera）拍攝到的畫面能夠**完美、無縫隙地**同步玩家穿梭於兩個空間時的正確透視、位置和旋轉。
@@ -45,7 +47,7 @@
 
 ## 如何使用
 
-1.  將 `PortalCam.cs` 腳本附加到您的**輔助攝影機 (Portal Camera)** 上。
+1.  將 [`PortalCam.cs`](https://raw.githubusercontent.com/LunarLunar/Unity-Quaternion-Portal/main/PortalCam.cs) 腳本附加到您的**輔助攝影機 (Portal Camera)** 上。
 2.  在 Inspector 面板中，設定以下參數：
     - **`playerCamera` (玩家的攝影機)**: 指定玩家的主攝影機 (Main Camera)。
     - **`portal_FrontPlayer` (玩家前方的傳送門 A)**: 指定入口傳送門的 Transform。
@@ -60,6 +62,7 @@
 # English Version
 
 ## Unity Virtual Portal System
+[Download Script](https://raw.githubusercontent.com/LunarLunar/Unity-Quaternion-Portal/main/PortalCam.cs) 
 
 The core of this system lies in the use of **Quaternion** mathematics and **Transform coordinate conversion**. It ensures that the view captured by the portal camera perfectly and seamlessly synchronizes the correct perspective, position, and rotation as the player moves between two spaces.
 
@@ -102,7 +105,7 @@ The rotation of the portal camera depends not only on the player camera's rotati
 
 ### How to Use
 
-1.  Attach the `PortalCam.cs` script to your **Portal Camera**.
+1.  Attach the `[`PortalCam.cs`](https://raw.githubusercontent.com/LunarLunar/Unity-Quaternion-Portal/main/PortalCam.cs)` script to your **Portal Camera**.
 2.  In the Inspector, configure the following parameters:
     - **`playerCamera` (Player's Camera)**: Assign the player's main camera.
     - **`portal_FrontPlayer` (Portal A in front of Player)**: Assign the Transform of the entrance portal.

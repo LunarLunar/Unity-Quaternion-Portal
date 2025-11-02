@@ -1,0 +1,39 @@
+協助寫readme 中英文版本  中文為預設 給英文連接
+
+
+C# 腳本，專為 Unity 3D 遊戲設計，用於實現**虛擬傳送門 (Virtual Portal)** 的視覺效果。
+
+本系統的核心在於利用 **Quaternion (四元數)** 數學和 **Transform 座標轉換**，確保輔助攝影機（Portal Camera）拍攝到的畫面能夠**完美、無縫隙地**同步玩家穿梭於兩個空間時的正確透視、位置和旋轉。
+
+它提供了資源優化的 RenderTexture 管理，並加入了 Z 軸鏡像等可選功能，使其適用於各種標準的傳送門應用場景。
+
+
+pic_PortalCam1.png
+
+示意圖一：位置映射 (Position Mapping Diagram)
+這張圖展示了玩家攝影機 (A) 與傳送門 A 的距離，如何決定輔助攝影機 (B) 與傳送門 B (Anchor) 的距離。
+
+
+圖示說明：
+
+左側 (藍色): 代表玩家的主攝影機 (A) 和傳送門 A。Vector A-P 表示玩家攝影機相對於傳送門 A 的向量，Distance A-P 則是它們之間的距離。
+
+右側 (橘色): 代表輔助攝影機 (Camera B) 和傳送門 B (Anchor Point)。
+
+核心理念: Camera B 的位置會被調整，使其相對於 Anchor Point 的位置關係，與 Camera A 相對於 Portal A 的位置關係完全相同（考慮到相對座標系）。
+-----------------------------------------
+pic_PortalCam2.png
+
+示意圖二：旋轉與鏡像映射 (Rotation & Mirror Mapping Diagram)
+這張圖展示了玩家攝影機的旋轉如何透過兩個傳送門之間的角度差，映射到輔助攝影機上，並解釋了 Z 軸鏡像的效果。
+
+
+圖示說明：
+
+頂視圖 (Orthographic Top-Down): 簡化展示 Y 軸旋轉的映射。
+
+左側 (藍色): 玩家攝影機 A 的旋轉方向。
+
+右側 (橘色): 輔助攝影機 B 的旋轉會綜合考慮玩家攝影機的旋轉，以及 Portal B 相對於 Portal A 的額外旋轉差。
+
+Z 軸鏡像: 虛線顯示了當 enableMirrorZ 設定為 true 時，攝影機 B 的局部 Z 軸會反轉，使畫面看起來像是穿透而非面向。圖中顯示 enableMirrorZ = false，因此 Z 軸方向保持一致。
